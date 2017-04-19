@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
+    <link rel="stylesheet" type="text/css" href="./../css/api.css" />
+    <link rel="stylesheet" type="text/css" href="./../css/style.css" />
+    <style>
+        body {
+            overflow: hidden;
+            background: url(../image/gesture.jpg) no-repeat center center;
+            background-size: cover;
+        }
+        
+        .heade {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .header-box {
+            margin: 50px 0 10px 0;
+        }
+        
+        .header-box img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+        
+        .heade p {
+            color: #cd6b33;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" class="flex-wrap flex-vertical">
+        <div class="heade flex-wrap">
+            <div class="header-box">
+                <img src="./../image/portrait.png" alt="" />
+            </div>
+            <p id="message"></p>
+        </div>
+        <div id="main" class="flex-con">
+            <canvas id="canvas" style="display: inline-block;"></canvas>
+        </div>
+    </div>
+</body>
+
+</html>
+<script type="text/javascript" src="./../script/api.js"></script>
+<script type="text/javascript" src="./../script/base.js"></script>
+<script type="text/javascript" src="gesture.js"></script>
+<script type="text/javascript">
+    apiready = function() {
+        homeExit();
+        var canvas = $api.dom("#canvas");
+        $api.attr(canvas, 'width', api.winWidth);
+        $api.attr(canvas, 'height', $api.dom('#main').offsetHeight - 30);
+        new Gesture().init();
+        getAvatar();
+    };
+
+    function getAvatar() {
+        var user = $api.getStorage('user');
+        if (user.url && user.url != null)
+            $api.dom("img").src = user.url;
+    }
+</script>
