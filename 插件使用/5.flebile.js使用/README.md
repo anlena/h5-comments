@@ -10,5 +10,13 @@
 
 * [字体大小不对](https://github.com/amfe/article/issues/10#issuecomment-232842536)
 
-  ​
+
+
+
+#### 参考文章
+
+* [flexbile1](http://yunkus.com/mobile-adaptation-scheme-flexiblejs/)
+* [flexbile2](https://blog.csdn.net/xiaomogg/article/details/50815990)
+* [flexbile3](http://www.bkjia.com/Javascript/1084660.html)
+* ​
 
